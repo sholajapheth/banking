@@ -1,3 +1,5 @@
+import SideBar from "@/components/SideBar";
+
 export const dynamic = 'force-dynamic'
 
 
@@ -6,8 +8,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const loggedin = {
+    firstName: "John",
+    lastName: "Doe",
+  }
   return (
-   <main>SIDEBAR 
+   <main className="flex h-screen w-full font-inter">
+    <SideBar user={loggedin} /> 
     {children}</main>
   );
 }
